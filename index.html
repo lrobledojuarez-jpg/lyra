@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Sitio - Inicio</title>
+  <meta name="description" content="Plantilla de página principal lista para index.html. Personalizable y responsive." />
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --secondary: #7c3aed;
+      --shadow: 0 6px 18px rgba(0,0,0,.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* Cabecera / Navegación */
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 60%, #22c55e 100%);
+      color: #fff;
+    }
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      font-weight: 700;
+      letter-spacing: .3px;
+      text-decoration: none;
+      color: #fff;
+    }
+    ul.nav {
+      list-style: none;
+      display: flex;
+      gap: 0.75rem;
+      padding: 0;
+      margin: 0;
+    }
+    a.nav-link {
+      color: #fff;
+      text-decoration: none;
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      transition: background .2s;
+    }
+    a.nav-link:hover {
+      background: rgba(255,255,255,.25);
+    }
+    a.nav-link.active {
+      background: rgba(255,255,255,.4);
+      color: #0b1020;
+      font-weight: 700;
+    }
+
+    /* Sección de héroe */
+    .hero {
+      padding: 5rem 1rem 3rem;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(99,102,241,.25) 0%, rgba(59,130,246,.25) 60%);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0 0 .5rem;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: .75rem 1.25rem;
+      border-radius: .5rem;
+      border: none;
+      background: #fff;
+      color: #111;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 6px 14px rgba(0,0,0,.08);
+      cursor: pointer;
+    }
+
+    /* Secciones principales */
+    main { width: 100%; }
+
+    .section { padding: 4rem 1rem; }
+    .section h2 {
+      text-align: center;
+      margin: 0 0 .75rem;
+      font-size: 1.75rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--surface);
+      padding: 1rem;
+      border-radius: .75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .section-light {
+      background: #f8fafc;
+    }
+
+    /* Formulario de contacto */
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: .75rem;
+      border: 1px solid #ddd;
+      border-radius: .5rem;
+      background: #fff;
+    }
+    form textarea { resize: vertical; }
+    form .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+    }
+
+    footer { text-align: center; padding: 1rem; color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 3rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabecera / Navegación -->
+  <header>
+    <nav aria-label="Navegación principal">
+      <a href="#inicio" class="brand">MiSitio</a>
+      <ul class="nav" role="menubar">
+        <li><a href="#inicio" class="nav-link active" role="menuitem">Inicio</a></li>
+        <li><a href="#servicios" class="nav-link" role="menuitem">Servicios</a></li>
+        <li><a href="#portafolio" class="nav-link" role="menuitem">Portafolio</a></li>
+        <li><a href="#contacto" class="nav-link" role="menuitem">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección de inicio / héroe -->
+  <section id="inicio" class="hero" aria-label="Sección de inicio">
+    <h1>Bienvenido a Mi Sitio</h1>
+    <p>Una plantilla de página principal lista para tu index.html. Personalizable y responsive.</p>
+    <a href="#contacto" class="btn" aria-label="Contacto">Contáctanos</a>
+  </section>
+
+  <main>
+    <!-- Servicios -->
+    <section id="servicios" class="section" aria-labelledby="servicios-titulo">
+      <h2 id="servicios-titulo">Servicios</h2>
+      <div class="grid" aria-label="Tarjetas de servicios">
+        <div class="card">
+          <h3>Diseño web</h3>
+          <p>Prototipos, maquetas y landing pages modernas.</p>
+        </div>
+        <div class="card">
+          <h3>Desarrollo</h3>
+          <p>Aplicaciones web escalables y seguras.</p>
+        </div>
+        <div class="card">
+          <h3>Optimización</h3>
+          <p>Performance, SEO y accesibilidad.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portafolio -->
+    <section id="portafolio" class="section section-light" aria-labelledby="portafolio-titulo">
+      <h2 id="portafolio-titulo">Portafolio</h2>
+      <div class="grid" aria-label="Proyectos destacados">
+        <div class="card">
+          <strong>Proyecto A</strong>
+          <p>Descripción breve del proyecto A.</p>
+        </div>
+        <div class="card">
+          <strong>Proyecto B</strong>
+          <p>Descripción breve del proyecto B.</p>
+        </div>
+        <div class="card">
+          <strong>Proyecto C</strong>
+          <p>Descripción breve del proyecto C.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section" aria-labelledby="contacto-titulo">
+      <h2 id="contacto-titulo">Contacto</h2>
+      <form action="#" method="post" aria-label="Formulario de contacto" style="max-width: 700px; margin: 0 auto;">
+        <div class="row" style="margin-bottom: .75rem;">
+          <input type="text" name="nombre" placeholder="Nombre" aria-label="Nombre" required />
+          <input type="email" name="email" placeholder="Correo" aria-label="Correo" required />
+        </div>
+        <textarea name="mensaje" placeholder="Mensaje" aria-label="Mensaje" rows="5" required></textarea>
+        <button type="submit" class="btn" style="margin-top: .75rem;">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2026 TuNombre. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Opcional: JavaScript para resaltar enlace activo al hacer scroll -->
+  <script>
+    (function() {
+      const links = document.querySelectorAll('a.nav-link');
+      const sections = [
+        document.getElementById('inicio'),
+        document.getElementById('servicios'),
+        document.getElementById('portafolio'),
+        document.getElementById('contacto')
+      ];
+
+      function setActiveLink() {
+        let current = '';
+        sections.forEach(sec => {
+          if (sec && window.scrollY >= sec.offsetTop - 120) {
+            current = sec.id;
+          }
+        });
+        links.forEach(a => {
+          if (a.getAttribute('href') === '#' + current) {
+            a.classList.add('active');
+          } else {
+            a.classList.remove('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', setActiveLink);
+      // Iniciar estado
+      setActiveLink();
+    })();
+  </script>
+</body>
+</html>
