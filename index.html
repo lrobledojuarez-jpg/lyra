@@ -1,194 +1,252 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mi Sitio - Inicio</title>
-  <meta name="description" content="Plantilla de página principal lista para index.html. Personalizable y responsive." />
-  <style>
-    :root {
-      --bg: #f6f7fb;
-      --surface: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --primary: #2563eb;
-      --secondary: #7c3aed;
-      --shadow: 0 6px 18px rgba(0,0,0,.08);
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
-      color: var(--text);
-      background: var(--bg);
-    }
+<title>Lyra</title>
 
-    /* Cabecera / Navegación */
-    header {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 60%, #22c55e 100%);
-      color: #fff;
-    }
-    nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.75rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .brand {
-      font-weight: 700;
-      letter-spacing: .3px;
-      text-decoration: none;
-      color: #fff;
-    }
-    ul.nav {
-      list-style: none;
-      display: flex;
-      gap: 0.75rem;
-      padding: 0;
-      margin: 0;
-    }
-    a.nav-link {
-      color: #fff;
-      text-decoration: none;
-      padding: .4rem .8rem;
-      border-radius: 999px;
-      transition: background .2s;
-    }
-    a.nav-link:hover {
-      background: rgba(255,255,255,.25);
-    }
-    a.nav-link.active {
-      background: rgba(255,255,255,.4);
-      color: #0b1020;
-      font-weight: 700;
-    }
+<style>
+:root {
+  --bg: #e9d331;
+  --text: #111;
+  --primary: #000;
+  --accent: #ff4fd8;
+}
 
-    /* Sección de héroe */
-    <li>⛔No comentarlo con desconocidos</li>
-     <li> ⚠️El empaque NO TE PROTEGE</li>
-     <div class="card">
-  <strong>Si te detiene una autoridad</strong>
-  <ol>
-    <li>🫆Manten una actitud:</li>
-    <li>Tranquila</li>
-    <li>Respetuosa</li>
-    <li>🦻TIP: Es un servidor publico, hablale en tercera persona (ud)</li>
-  </ol>
-       
-      </div>
+/* RESET */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.7);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  align-items: center;
+}
+
+/* LOGO */
+.brand {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+/* NAV LINKS */
+.nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Hover pro */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: var(--accent);
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+/* ACTIVO */
+.nav-link.active {
+  background: var(--accent);
+  color: white;
+}
+
+/* SECCIONES */
+section {
+  padding: 120px 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* CARDS */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* BOTONES */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+/* SCROLL SUAVE VISUAL */
+section {
+  scroll-margin-top: 100px;
+}
+
+/* FORM */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  border: none;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a class="brand" href="#">LYRA</a>
+    <div class="nav">
+      <a href="#inicio" class="nav-link">Inicio</a>
+      <a href="#guia" class="nav-link">Guía</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<!-- INICIO -->
+<section id="inicio">
+  <h1>The delirium of pushing forward</h1>
+  <p>Muévete informado y evita problemas en el día a día.</p>
+  <a href="#guia" class="btn">Ver guía</a>
+</section>
+
+<!-- GUIA -->
+<section id="guia">
+  <h2>Guía rápida CBD</h2>
+
+  <div class="grid">
+
     <div class="card">
-  <strong>👮Importante</strong>
-  <ol>
-    <li>No intentes explicar compuestos</li>
-    <li>🤳No discutas legalidad en el momento</li>
-  </ol>
-</div>
-    
-     <div class="card">
-  <strong>👮‍♀️Identificar tus emociones👮‍♀️</strong>
-  <ol>
-    <li>🙅No sobrepensar</li>
-    <li>🤳No sobresentir</li>
-  </ol>
-</div>
-    </section>
+      <strong>Antes de salir</strong>
+      <ol>
+        <li>Lleva productos etiquetados</li>
+        <li>Verifica composición</li>
+        <li>Evita envases genéricos</li>
+        <li>Transporta lo necesario</li>
+      </ol>
+    </div>
 
-    <!-- Guia rapida para consumidores de CBD en Mexico. -->
-    <section id="Guia rapida para consumidores de CBD en Mexico." class="section section-light" aria-labelledby="Guia rapida para consumidores de CBD en Mexico.-titulo">
-      <h2 id="Guia rapida para consumidores de CBD en Mexico.-titulo">Guia rapida para consumidores de CBD en Mexico.</h2>
-      <div class="grid" aria-label="Proyectos destacados">
-        <div class="card">
-  <strong>Antes de salir</strong>
-  <ol>
-    <li>Lleva productos etiquetados y sellados</li>
-    <li>Verifica que el CBD lleve % de CBG</li>
-    <li>Evita envases genéricos o sin marca</li>
-    <li>Transporta solo lo necesario</li>
-  </ol>
-</div>
-        <div class="card">
-  <strong>Durante una revision</strong>
-  <ol>
-    <li>No discutas</li>
-    <li>No te pongas agresivo</li>
-    <li>Sin sarcasmo ni confrontacion</li>
-    <li>Seguro, solo ponte a disposicion</li>
-  </ol>
-</div>
-        <div class="card">
-  <strong>🚫Evita a toda costa🚫</strong>
-  <ol>
-    <li>❌Ofrecer dinero</li>
-    <li>❌Grabar de forma respetuosa</li>
-    <li>❌Consumir en via publica</li>
-    <li>❌Mentir o inventar</li>
-    <li>⚠️No se trata de ganar la discucion, se trata de salir sin problemas</li>
-    <li>⛔Menos riesgo es mas tranquilidad⚠️</li>
-  </ol>
-</div>
-      </div>
-    </section>
+    <div class="card">
+      <strong>Durante revisión</strong>
+      <ol>
+        <li>No discutas</li>
+        <li>Mantén calma</li>
+        <li>Sin confrontación</li>
+      </ol>
+    </div>
 
-    <!-- Contacto -->
-    <section id="contacto" class="section" aria-labelledby="contacto-titulo">
-      <h2 id="contacto-titulo">Contacto</h2>
-      <form action="#" method="post" aria-label="Formulario de contacto" style="max-width: 700px; margin: 0 auto;">
-        <div class="row" style="margin-bottom: .75rem;">
-          <input type="text" name="nombre" placeholder="Nombre" aria-label="Nombre" required />
-          <input type="email" name="email" placeholder="Correo" aria-label="Correo" required />
-        </div>
-        <textarea name="mensaje" placeholder="Mensaje" aria-label="Mensaje" rows="5" required></textarea>
-        <button type="submit" class="btn" style="margin-top: .75rem;">Enviar</button>
-      </form>
-    </section>
-  </main>
+    <div class="card">
+      <strong>Evita</strong>
+      <ol>
+        <li>No ofrecer dinero</li>
+        <li>No mentir</li>
+        <li>No consumir en vía pública</li>
+      </ol>
+    </div>
 
-  <!-- Pie de página -->
-  <footer>
-    <p>© Basic Website Copyright:
-© 2026 Lyra/product service. All rights reserved. The content on this website, including text, images, and graphics, is protected by copyright law. No part may be copied or reproduced without prior written permission.</p>
-  </footer>
+  </div>
+</section>
 
-  <!-- Opcional: JavaScript para resaltar enlace activo al hacer scroll -->
-  <script>
-    (function() {
-      const links = document.querySelectorAll('a.nav-link');
-      const sections = [
-        document.getElementById('inicio'),
-        document.getElementById('servicios'),
-        document.getElementById('portafolio'),
-        document.getElementById('contacto')
-      ];
+<!-- CONTACTO -->
+<section id="contacto">
+  <h2>Contacto</h2>
+  <input type="text" placeholder="Nombre">
+  <input type="email" placeholder="Correo">
+  <textarea placeholder="Mensaje"></textarea>
+  <button class="btn">Enviar</button>
+</section>
 
-      function setActiveLink() {
-        let current = '';
-        sections.forEach(sec => {
-          if (sec && window.scrollY >= sec.offsetTop - 120) {
-            current = sec.id;
-          }
-        });
-        links.forEach(a => {
-          if (a.getAttribute('href') === '#' + current) {
-            a.classList.add('active');
-          } else {
-            a.classList.remove('active');
-          }
-        });
-      }
+<footer>
+  © 2026 Lyra. Todos los derechos reservados.
+</footer>
 
-      window.addEventListener('scroll', setActiveLink);
-      // Iniciar estado
-      setActiveLink();
-    })();
-  </script>
+<script>
+const links = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  let fromTop = window.scrollY;
+
+  links.forEach(link => {
+    let section = document.querySelector(link.hash);
+
+    if (
+      section.offsetTop <= fromTop + 100 &&
+      section.offsetTop + section.offsetHeight > fromTop + 100
+    ) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
+</script>
+
 </body>
 </html>
