@@ -1,326 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mi Sitio - Inicio</title>
-  <meta name="description" content="Plantilla de página principal lista para index.html. Personalizable y responsive." />
+  <meta charset="UTF-8">
+  <title>Delirium</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    :root {
-      --bg: #f6f7fb;
-      --surface: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --primary: #2563eb;
-      --secondary: #7c3aed;
-      --shadow: 0 6px 18px rgba(0,0,0,.08);
+    html {
+      scroll-behavior: smooth;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
-      color: var(--text);
-      background: var(--bg);
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
+      color: white;
     }
 
-    /* Cabecera / Navegación */
-    header {
-      position: sticky;
-      top: 0;
+    /* HEADER */
+    .header {
+      position: fixed;
       width: 100%;
+      top: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
       z-index: 1000;
-      background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 60%, #22c55e 100%);
-      color: #fff;
     }
-    nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.75rem 1rem;
+
+    .container {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-    }
-    .brand {
-      font-weight: 700;
-      letter-spacing: .3px;
-      text-decoration: none;
-      color: #fff;
-    }
-    ul.nav {
-      list-style: none;
-      display: flex;
-      gap: 0.75rem;
-      padding: 0;
-      margin: 0;
-    }
-    a.nav-link {
-      color: #fff;
-      text-decoration: none;
-      padding: .4rem .8rem;
-      border-radius: 999px;
-      transition: background .2s;
-    }
-    a.nav-link:hover {
-      background: rgba(255,255,255,.25);
-    }
-    a.nav-link.active {
-      background: rgba(255,255,255,.4);
-      color: #0b1020;
-      font-weight: 700;
+      align-items: center;
+      padding: 15px 30px;
     }
 
-    /* Sección de héroe */
+    .logo img {
+      height: 50px;
+    }
+
+    /* NAV */
+    .nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    .nav a:hover {
+      color: #ff4fd8;
+    }
+
+    /* HERO */
     .hero {
-      padding: 5rem 1rem 3rem;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      background: linear-gradient(135deg, rgba(99,102,241,.25) 0%, rgba(59,130,246,.25) 60%);
+      padding-top: 80px;
+      background: radial-gradient(circle at center, #1a1a1a, #000);
     }
-    .hero h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin: 0 0 .5rem;
+
+    .hero-content {
+      max-width: 700px;
     }
-    .hero p {
-      color: var(--muted);
-      font-size: 1.125rem;
-      margin-bottom: 1rem;
+
+    .slogan {
+      max-width: 100%;
+      filter: drop-shadow(0 0 15px #ff4fd8);
     }
+
+    .subtext {
+      margin: 20px 0;
+      opacity: 0.8;
+      font-size: 16px;
+    }
+
+    /* BOTÓN */
     .btn {
-      display: inline-block;
-      padding: .75rem 1.25rem;
-      border-radius: .5rem;
-      border: none;
-      background: #fff;
-      color: #111;
+      background: #ff4fd8;
+      padding: 12px 25px;
+      color: white;
       text-decoration: none;
-      font-weight: 700;
-      box-shadow: 0 6px 14px rgba(0,0,0,.08);
-      cursor: pointer;
+      border-radius: 25px;
+      transition: 0.3s;
+      display: inline-block;
     }
 
-    /* Secciones principales */
-    main { width: 100%; }
+    .btn:hover {
+      background: #ff2fc0;
+    }
 
-    .section { padding: 4rem 1rem; }
-    .section h2 {
+    /* SECCIONES */
+    section {
+      padding: 100px 30px;
       text-align: center;
-      margin: 0 0 .75rem;
-      font-size: 1.75rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: var(--surface);
-      padding: 1rem;
-      border-radius: .75rem;
-      box-shadow: var(--shadow);
     }
 
     .section-light {
-      background: #f8fafc;
-    }
-
-    /* Formulario de contacto */
-    form input[type="text"],
-    form input[type="email"],
-    form textarea {
-      width: 100%;
-      padding: .75rem;
-      border: 1px solid #ddd;
-      border-radius: .5rem;
-      background: #fff;
-    }
-    form textarea { resize: vertical; }
-    form .row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: .75rem;
-    }
-
-    footer { text-align: center; padding: 1rem; color: var(--muted); }
-
-    @media (max-width: 900px) {
-      .grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 600px) {
-      .grid { grid-template-columns: 1fr; }
-      .hero { padding: 3rem 1rem; }
+      background: #111;
     }
   </style>
 </head>
+
 <body>
-  <!-- Cabecera / Navegación -->
-  <header>
-    <nav aria-label="Navegación principal">
-      <a href="#inicio" class="brand">MiSitio</a>
-      <ul class="nav" role="menubar">
-        <li><a href="#inicio" class="nav-link active" role="menuitem">Inicio</a></li>
-        <li><a href="#servicios" class="nav-link" role="menuitem">Law</a></li>
-        <li><a href="#portafolio" class="nav-link" role="menuitem">Portafolio</a></li>
-        <li><a href="#contacto" class="nav-link" role="menuitem">Contacto</a></li>
-      </ul>
-    </nav>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+      </div>
+
+      <nav class="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#guia">Guía</a>
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Sección de inicio / héroe -->
-  <section id="inicio" class="hero" aria-label="Sección de inicio">
-    <h1>Bienvenido mi parientito</h1>
-    <p>Soy lyra, puedo ser tu amigo imaginario para que tengas un buen trip. BY:m8</p>
-    <a href="#contacto" class="btn" aria-label="Contacto">Contáctanos</a>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+
+      <img src="slogan.png" alt="The delirium of pushing forward" class="slogan">
+
+      <p class="subtext">
+        Muévete con información clara, toma mejores decisiones y evita riesgos.
+      </p>
+
+      <a href="#guia" class="btn">Ver guía</a>
+
+    </div>
   </section>
 
-  <main>
-    <!-- Law -->
-    <section id="Law" class="section" aria-labelledby="Law-titulo">
-      <h2 id="servicios-titulo">Law</h2>
-      <div class="grid" aria-label="Tarjetas de servicios">
-       <div class="card">
-  <h3>¿Que articulo nos protege?</h3>
-  <p>
-    El Artículo 16 establece la garantía de legalidad en los actos de autoridad, 
-    protegiendo a las personas de ser molestadas sin un mandamiento escrito y 
-    fundamentado de la autoridad competente.
-  </p>
-</div>
-        <div class="card">
-          <h3>Y si truena...</h3>
-          <p>Si usas CBD, CBG o HHC, es normal tener dudas, sobre todo fuera de casa.
-Aquí te dejamos una guía sencilla para que estés al tiro, decidas bien y reduzcas riesgos.</p>
-        </div>
-        <div class="card">
-           <strong>Uso de vapes (HHC, CBD Y CBG)</strong>
-  <ol>
-    <li>Son psicoactivos</li>
-    <li>Pueden ser percibidos como ilegales</li>
-    <li>Son dificiles de justificar</li>
-    <li>⛔No vapear</li>
-    <li>⛔No mostrarlos</li>
-    <li>⛔No comentarlo con desconocidos</li>
-     <li> ⚠️El empaque NO TE PROTEGE</li>
-     <div class="card">
-  <strong>Si te detiene una autoridad</strong>
-  <ol>
-    <li>🫆Manten una actitud:</li>
-    <li>Tranquila</li>
-    <li>Respetuosa</li>
-    <li>🦻TIP: Es un servidor publico, hablale en tercera persona (ud)</li>
-  </ol>
-       
-      </div>
-    <div class="card">
-  <strong>👮Importante</strong>
-  <ol>
-    <li>No intentes explicar compuestos</li>
-    <li>🤳No discutas legalidad en el momento</li>
-  </ol>
-</div>
-    
-     <div class="card">
-  <strong>👮‍♀️Identificar tus emociones👮‍♀️</strong>
-  <ol>
-    <li>🙅No sobrepensar</li>
-    <li>🤳No sobresentir</li>
-  </ol>
-</div>
-    </section>
+  <!-- GUÍA -->
+  <section id="guia" class="section-light">
+    <h2>Guía rápida</h2>
+    <p>Consejos clave para el uso responsable de CBD en espacios públicos.</p>
+  </section>
 
-    <!-- Guia rapida para consumidores de CBD en Mexico. -->
-    <section id="Guia rapida para consumidores de CBD en Mexico." class="section section-light" aria-labelledby="Guia rapida para consumidores de CBD en Mexico.-titulo">
-      <h2 id="Guia rapida para consumidores de CBD en Mexico.-titulo">Guia rapida para consumidores de CBD en Mexico.</h2>
-      <div class="grid" aria-label="Proyectos destacados">
-        <div class="card">
-  <strong>Antes de salir</strong>
-  <ol>
-    <li>Lleva productos etiquetados y sellados</li>
-    <li>Verifica que el CBD lleve % de CBG</li>
-    <li>Evita envases genéricos o sin marca</li>
-    <li>Transporta solo lo necesario</li>
-  </ol>
-</div>
-        <div class="card">
-  <strong>Durante una revision</strong>
-  <ol>
-    <li>No discutas</li>
-    <li>No te pongas agresivo</li>
-    <li>Sin sarcasmo ni confrontacion</li>
-    <li>Seguro, solo ponte a disposicion</li>
-  </ol>
-</div>
-        <div class="card">
-  <strong>🚫Evita a toda costa🚫</strong>
-  <ol>
-    <li>❌Ofrecer dinero</li>
-    <li>❌Grabar de forma respetuosa</li>
-    <li>❌Consumir en via publica</li>
-    <li>❌Mentir o inventar</li>
-    <li>⚠️No se trata de ganar la discucion, se trata de salir sin problemas</li>
-    <li>⛔Menos riesgo es mas tranquilidad⚠️</li>
-  </ol>
-</div>
-      </div>
-    </section>
+  <!-- PRODUCTOS -->
+  <section id="productos">
+    <h2>Productos</h2>
+    <p>Explora las diferentes opciones disponibles.</p>
+  </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="section" aria-labelledby="contacto-titulo">
-      <h2 id="contacto-titulo">Contacto</h2>
-      <form action="#" method="post" aria-label="Formulario de contacto" style="max-width: 700px; margin: 0 auto;">
-        <div class="row" style="margin-bottom: .75rem;">
-          <input type="text" name="nombre" placeholder="Nombre" aria-label="Nombre" required />
-          <input type="email" name="email" placeholder="Correo" aria-label="Correo" required />
-        </div>
-        <textarea name="mensaje" placeholder="Mensaje" aria-label="Mensaje" rows="5" required></textarea>
-        <button type="submit" class="btn" style="margin-top: .75rem;">Enviar</button>
-      </form>
-    </section>
-  </main>
+  <!-- CONTACTO -->
+  <section id="contacto" class="section-light">
+    <h2>Contacto</h2>
+    <p>¿Tienes dudas? Contáctanos.</p>
+  </section>
 
-  <!-- Pie de página -->
-  <footer>
-    <p>© Basic Website Copyright:
-© 2026 Lyra/product service. All rights reserved. The content on this website, including text, images, and graphics, is protected by copyright law. No part may be copied or reproduced without prior written permission.</p>
-  </footer>
-
-  <!-- Opcional: JavaScript para resaltar enlace activo al hacer scroll -->
-  <script>
-    (function() {
-      const links = document.querySelectorAll('a.nav-link');
-      const sections = [
-        document.getElementById('inicio'),
-        document.getElementById('servicios'),
-        document.getElementById('portafolio'),
-        document.getElementById('contacto')
-      ];
-
-      function setActiveLink() {
-        let current = '';
-        sections.forEach(sec => {
-          if (sec && window.scrollY >= sec.offsetTop - 120) {
-            current = sec.id;
-          }
-        });
-        links.forEach(a => {
-          if (a.getAttribute('href') === '#' + current) {
-            a.classList.add('active');
-          } else {
-            a.classList.remove('active');
-          }
-        });
-      }
-
-      window.addEventListener('scroll', setActiveLink);
-      // Iniciar estado
-      setActiveLink();
-    })();
-  </script>
 </body>
 </html>
