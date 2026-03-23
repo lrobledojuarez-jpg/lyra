@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mi Sitio - Inicio</title>
-  <meta name="description" content="Plantilla de página principal lista para index.html. Personalizable y responsive." />
+  <title>Lyra - Guía CBD</title>
+  <meta name="description" content="Guía rápida para consumidores de CBD en México." />
+
   <style>
     :root {
       --bg: #f6f7fb;
@@ -12,183 +13,230 @@
       --text: #111827;
       --muted: #6b7280;
       --primary: #2563eb;
-      --secondary: #7c3aed;
       --shadow: 0 6px 18px rgba(0,0,0,.08);
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
-      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto;
       background: var(--bg);
+      color: var(--text);
     }
 
-    /* Cabecera / Navegación */
     header {
       position: sticky;
       top: 0;
-      width: 100%;
+      background: linear-gradient(135deg, #4f46e5, #3b82f6, #22c55e);
+      color: white;
       z-index: 1000;
-      background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 60%, #22c55e 100%);
-      color: #fff;
     }
+
     nav {
       max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.75rem 1rem;
+      margin: auto;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      align-items: center;
+      padding: 1rem;
     }
+
     .brand {
-      font-weight: 700;
-      letter-spacing: .3px;
+      font-weight: bold;
       text-decoration: none;
-      color: #fff;
+      color: white;
     }
-    ul.nav {
+
+    .nav {
       list-style: none;
       display: flex;
-      gap: 0.75rem;
-      padding: 0;
+      gap: 1rem;
       margin: 0;
+      padding: 0;
     }
-    a.nav-link {
-      color: #fff;
+
+    .nav a {
+      color: white;
       text-decoration: none;
-      padding: .4rem .8rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 999px;
-      transition: background .2s;
-    }
-    a.nav-link:hover {
-      background: rgba(255,255,255,.25);
-    }
-    a.nav-link.active {
-      background: rgba(255,255,255,.4);
-      color: #0b1020;
-      font-weight: 700;
     }
 
-    /* Sección de héroe */
-    <li>⛔No comentarlo con desconocidos</li>
-     <li> ⚠️El empaque NO TE PROTEGE</li>
-     <div class="card">
-  <strong>Si te detiene una autoridad</strong>
-  <ol>
-    <li>🫆Manten una actitud:</li>
-    <li>Tranquila</li>
-    <li>Respetuosa</li>
-    <li>🦻TIP: Es un servidor publico, hablale en tercera persona (ud)</li>
-  </ol>
-       
+    .nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .section {
+      margin: 2rem 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #111827;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 0.6rem 1rem;
+      border: none;
+      background: var(--primary);
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="#" class="brand">Lyra</a>
+    <ul class="nav">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#guia">Guía CBD</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- INICIO -->
+  <section id="inicio" class="section">
+    <h2>Recomendaciones básicas</h2>
+
+    <div class="grid">
+      <div class="card">
+        <ul>
+          <li>⛔ No comentarlo con desconocidos</li>
+          <li>⚠️ El empaque NO te protege</li>
+        </ul>
       </div>
-    <div class="card">
-  <strong>👮Importante</strong>
-  <ol>
-    <li>No intentes explicar compuestos</li>
-    <li>🤳No discutas legalidad en el momento</li>
-  </ol>
-</div>
-    
-     <div class="card">
-  <strong>👮‍♀️Identificar tus emociones👮‍♀️</strong>
-  <ol>
-    <li>🙅No sobrepensar</li>
-    <li>🤳No sobresentir</li>
-  </ol>
-</div>
-    </section>
 
-    <!-- Guia rapida para consumidores de CBD en Mexico. -->
-    <section id="Guia rapida para consumidores de CBD en Mexico." class="section section-light" aria-labelledby="Guia rapida para consumidores de CBD en Mexico.-titulo">
-      <h2 id="Guia rapida para consumidores de CBD en Mexico.-titulo">Guia rapida para consumidores de CBD en Mexico.</h2>
-      <div class="grid" aria-label="Proyectos destacados">
-        <div class="card">
-  <strong>Antes de salir</strong>
-  <ol>
-    <li>Lleva productos etiquetados y sellados</li>
-    <li>Verifica que el CBD lleve % de CBG</li>
-    <li>Evita envases genéricos o sin marca</li>
-    <li>Transporta solo lo necesario</li>
-  </ol>
-</div>
-        <div class="card">
-  <strong>Durante una revision</strong>
-  <ol>
-    <li>No discutas</li>
-    <li>No te pongas agresivo</li>
-    <li>Sin sarcasmo ni confrontacion</li>
-    <li>Seguro, solo ponte a disposicion</li>
-  </ol>
-</div>
-        <div class="card">
-  <strong>🚫Evita a toda costa🚫</strong>
-  <ol>
-    <li>❌Ofrecer dinero</li>
-    <li>❌Grabar de forma respetuosa</li>
-    <li>❌Consumir en via publica</li>
-    <li>❌Mentir o inventar</li>
-    <li>⚠️No se trata de ganar la discucion, se trata de salir sin problemas</li>
-    <li>⛔Menos riesgo es mas tranquilidad⚠️</li>
-  </ol>
-</div>
+      <div class="card">
+        <strong>Si te detiene una autoridad</strong>
+        <ol>
+          <li>Mantén una actitud tranquila</li>
+          <li>Respetuosa</li>
+          <li>Habla de usted</li>
+        </ol>
       </div>
-    </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="section" aria-labelledby="contacto-titulo">
-      <h2 id="contacto-titulo">Contacto</h2>
-      <form action="#" method="post" aria-label="Formulario de contacto" style="max-width: 700px; margin: 0 auto;">
-        <div class="row" style="margin-bottom: .75rem;">
-          <input type="text" name="nombre" placeholder="Nombre" aria-label="Nombre" required />
-          <input type="email" name="email" placeholder="Correo" aria-label="Correo" required />
-        </div>
-        <textarea name="mensaje" placeholder="Mensaje" aria-label="Mensaje" rows="5" required></textarea>
-        <button type="submit" class="btn" style="margin-top: .75rem;">Enviar</button>
-      </form>
-    </section>
-  </main>
+      <div class="card">
+        <strong>Importante</strong>
+        <ol>
+          <li>No intentes explicar compuestos</li>
+          <li>No discutas legalidad en el momento</li>
+        </ol>
+      </div>
 
-  <!-- Pie de página -->
-  <footer>
-    <p>© Basic Website Copyright:
-© 2026 Lyra/product service. All rights reserved. The content on this website, including text, images, and graphics, is protected by copyright law. No part may be copied or reproduced without prior written permission.</p>
-  </footer>
+      <div class="card">
+        <strong>Control emocional</strong>
+        <ol>
+          <li>No sobrepensar</li>
+          <li>No sobresentir</li>
+        </ol>
+      </div>
+    </div>
+  </section>
 
-  <!-- Opcional: JavaScript para resaltar enlace activo al hacer scroll -->
-  <script>
-    (function() {
-      const links = document.querySelectorAll('a.nav-link');
-      const sections = [
-        document.getElementById('inicio'),
-        document.getElementById('servicios'),
-        document.getElementById('portafolio'),
-        document.getElementById('contacto')
-      ];
+  <!-- GUÍA CBD -->
+  <section id="guia" class="section">
+    <h2>Guía rápida para consumidores de CBD en México</h2>
 
-      function setActiveLink() {
-        let current = '';
-        sections.forEach(sec => {
-          if (sec && window.scrollY >= sec.offsetTop - 120) {
-            current = sec.id;
-          }
-        });
-        links.forEach(a => {
-          if (a.getAttribute('href') === '#' + current) {
-            a.classList.add('active');
-          } else {
-            a.classList.remove('active');
-          }
-        });
-      }
+    <div class="grid">
+      <div class="card">
+        <strong>Antes de salir</strong>
+        <ol>
+          <li>Lleva productos etiquetados y sellados</li>
+          <li>Verifica porcentaje de CBD</li>
+          <li>Evita envases genéricos</li>
+          <li>Transporta solo lo necesario</li>
+        </ol>
+      </div>
 
-      window.addEventListener('scroll', setActiveLink);
-      // Iniciar estado
-      setActiveLink();
-    })();
-  </script>
+      <div class="card">
+        <strong>Durante una revisión</strong>
+        <ol>
+          <li>No discutas</li>
+          <li>No te pongas agresivo</li>
+          <li>Evita confrontación</li>
+          <li>Mantente tranquilo</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <strong>🚫 Evita a toda costa</strong>
+        <ol>
+          <li>No ofrecer dinero</li>
+          <li>No consumir en vía pública</li>
+          <li>No mentir</li>
+          <li>Menos riesgo = más tranquilidad</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section">
+    <h2>Contacto</h2>
+
+    <form>
+      <input type="text" placeholder="Nombre" required />
+      <input type="email" placeholder="Correo" required />
+      <textarea rows="4" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Lyra. Todos los derechos reservados.</p>
+</footer>
+
 </body>
 </html>
